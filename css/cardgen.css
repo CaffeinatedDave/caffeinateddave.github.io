@@ -1,0 +1,91 @@
+select {
+  font-family: 'FontAwesome', 'Arial Black', Gadget, sans-serif
+}
+body {
+  text-align: center;
+  font-family: 'Arial', Gadget, sans-serif
+}
+ul {
+  list-style-type: none;
+}
+#binField {display:none;}
+
+#history>ul>li>img {
+  height: 1.5em;
+}
+
+div.row {
+  margin: 1cm auto;
+}
+
+#card {
+  font-family: 'Lucida Console', Monaco, monospace;
+  display: none;
+  margin-top: 25px;
+  position: relative;
+  margin: auto;
+  width: 8.56cm;
+  height: 5.398cm;
+  background: #000;
+  border-radius: 0.3cm;
+  color: silver;
+  font-size: 0.2926cm;
+  line-height: 0.5cm;
+}
+#cardName {
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: teal;
+  position: absolute;
+  top:0.25cm;
+  right:0.25cm;
+  font-size: 0.7cm;
+}
+#nameAlt {
+  color: orange;
+}
+#cardNumber {
+  position: absolute;
+  top: 2.5cm;
+  margin:auto;
+  line-height: 0.75cm;
+  left:10%;
+  width:80%;
+  text-align:justify;
+}
+#cardNumber span {
+  width: 100%;
+  height: 0;
+  display:inline-block;
+}
+#validFrom {
+  position: absolute;
+  left:0.75cm;
+  top:3.5cm;
+}
+#expiry {
+  position: absolute;
+  left:3.75cm;
+  top:3.5cm;
+}
+#holderName {
+  position: absolute;
+  left:0.75cm;
+  bottom: 0.25cm;
+}
+#logo {
+  position: absolute;
+  height:1.5cm;
+  right:0.3cm;
+  bottom:0.3cm;
+}
+#chip {
+  position: absolute;
+  left:0.8cm;
+  top:1cm;
+  width:1.5cm;
+}
+#disclaimer {
+  width: 80%;
+  margin: auto;
+  font-size: 0.6em;
+}
