@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Card Generator - CaffeinatedDave</title>
+  <meta charset="utf-8">
+  <link rel="apple-touch-icon" sizes="57x57" href="/ico/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/ico/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/ico/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/ico/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/ico/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/ico/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/ico/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/ico/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/ico/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="/ico/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/ico/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/ico/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/ico/favicon-16x16.png">
+  <link rel="icon" href="/ico/animated_favicon.gif" type="image/gif" >
+  <link rel="manifest" href="/ico/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ico/ms-icon-144x144.png">
+
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/css.css"/>
+  <link rel="stylesheet" type="text/css" href="css/cardgen.css"/>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.min.css">
+</head>
+
+<body>
+  <div w3-include-html="header.html"></div>
+
+  <div class="row">
+    <div id="options" class="col-6">
+      <p>
+        <label for="firstname">First Name(s):</label><input id="firstname" name="cardtype"/><br/>
+        <label for="surname">Last Name(s):</label><input id="surname"/><br/>
+        <label for="sex">Sex:</label><select id="sex"><option value="0">M</option><option value="40">F</option></select><br/>
+        <div class="form-group required">
+          <div class="input-group">
+            <input id="dob" class="datepick"/>
+            <div class="input-group-addon">
+              <span class="glyphicon glyphicon-calendar"></span>
+            </div>
+          </div>
+        </div>
+        <label for="country">Country of Birth:</label><select id="country"></select><br/>
+        <label for="province">Province of Birth:</label><select id="province" disabled="disabled"></select><br/>
+        <label for="city">City of Birth:</label><select id="city" disabled="disabled"></select><br/>
+      </p>
+      <p><button onclick="generateCard()">Generate</button></p>
+    </div>
+    <div id="results" class="col-6">
+      <p>Codice Fiscale:</p>
+      <span id="result"></span>
+    </div>
+  </div>
+
+  <div id="disclaimer">
+    The tax identification number (Codice Fiscale) of an individual is valid only if it has already been released by the Italian Agenzia delle Entrate.<br/>
+    This tool may differ from your actual code in the cases of omocodia.
+  </div>
+
+  <script language="javascript" src="https://momentjs.com/downloads/moment.js"></script>
+  <script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script src="./js/fiscale.js"></script>
+  <script src="./js/generic.js"></script>
+</body>
+
+</html>
