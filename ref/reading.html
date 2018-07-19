@@ -39,6 +39,13 @@
         }
       })
     }
+
+    function twitterWindow() {
+      const url = "https://twitter.com/intent/tweet?related=CaffeinatedDave&text=@CaffeinatedDave%20A%20suggestion%20for%20your%20reading%20list%20-%20&hashtags=readingList"
+      const height = 260;
+      const width = 640;
+      window.open(url , 'newwindow', 'width=' + width + ', height=' + height + ', top=' + ((window.innerHeight - height) / 2) + ', left=' + ((window.innerWidth - width) / 2));
+        }
     </script>
   </head>
   <body>
@@ -49,7 +56,7 @@
 
       <p>
         Recommendations come mainly from the great people I've had the pleasure to work with.
-        Did I miss something? Let me know on <a href="https://twitter.com/CaffeinatedDave">twitter</a>
+        Did I miss something? Let me know on <a onclick="twitterWindow()" href="#">twitter</a>
       </p>
 
       <input type="text" id="bookSearch" onkeyup="bookSearch()" placeholder="Search for books..." />
