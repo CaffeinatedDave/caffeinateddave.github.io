@@ -2,6 +2,10 @@ body {
   padding-top: 70px;
 }
 
+ul {
+  list-style-type: none;
+}
+
 ul.dropdown-menu>li{
   width:100%;
   text-align: center;
@@ -11,4 +15,15 @@ ul.dropdown-menu>li{
 body>div.container {
   width: 80%;
   margin: auto;
+}
+
+.page {
+  min-height: 95vh;
+}
+
+footer {
+  background-color: black;
+  color: #ccc;
+  padding: 3px;
+  min-height: 5vh;
 }

@@ -1,4 +1,5 @@
 populateCountries = () => {
+  
 }
 
 populateProvinces = () => {
@@ -8,10 +9,14 @@ populateCities = () => {
 
 }
 
-generateCode = () => {
-  $('#code').text("Generated...")
+generateCard = () => {
+  $('#card').text("Generated...")
 }
 
 $(document).ready(() => {
+  $('#dob').datetimepicker({
+    format: 'DD/MM/YYYY',
+    viewMode: 'years'
+  });
   populateCountries();
 })

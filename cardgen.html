@@ -33,54 +33,58 @@
 <body>
   <div w3-include-html="header.html"></div>
 
-  <div class="row">
-    <div id="card">
-      <p id="cardName">Credit<span id="nameAlt">Card</span>Co</p>
-      <p id="cardNumber">&nbsp;</p>
-      <p id="holderName">CARDHOLDER NAME</p>
-      <p id="validFrom"></p>
-      <p id="expiry"></p>
-      <img id="logo" />
-      <img id="chip" src="./img/chip.png"/>
+  <div class="page container">
+    <div class="row">
+      <div id="card">
+        <p id="cardName">Credit<span id="nameAlt">Card</span>Co</p>
+        <p id="cardNumber">&nbsp;</p>
+        <p id="holderName">CARDHOLDER NAME</p>
+        <p id="validFrom"></p>
+        <p id="expiry"></p>
+        <img id="logo" />
+        <img id="chip" src="./img/chip.png"/>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="options" class="col-12">
+        <p>
+          <label for"cardtype">Card Type:</label>
+          <select id="cardtype" name="cardtype"></select>
+        </p>
+        <p id="binField">
+          <label for="bin">BIN:</label><input id="bin" value="" maxlength="6"/><br/>
+          <label for="length">Length:</label>
+          <select id="length" name="length">
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16" selected="selected">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+          </select>
+        </p>
+        <p><button onclick="generateCard()">Generate</button></p>
+      </div>
+    </div>
+    <div class="row">
+      <div id="history" class="col-12">
+        <p>Previously generated cards:</p>
+        <ul id="previousCards">
+        </ul>
+      </div>
+    </div>
+
+    <div id="disclaimer">Visa, Electron, MasterCard, American Express and Diners Club names and logos are
+      trademarks of their respective owners, which are in no way associated or affiliated with this site.<br/>
+      They are included purely for descriptive purposes and as such comply with "Fair Use".
     </div>
   </div>
 
-  <div class="row">
-    <div id="options" class="col-12">
-      <p>
-        <label for"cardtype">Card Type:</label>
-        <select id="cardtype" name="cardtype"></select>
-      </p>
-      <p id="binField">
-        <label for="bin">BIN:</label><input id="bin" value="" maxlength="6"/><br/>
-        <label for="length">Length:</label>
-        <select id="length" name="length">
-          <option value="12">12</option>
-          <option value="13">13</option>
-          <option value="14">14</option>
-          <option value="15">15</option>
-          <option value="16" selected="selected">16</option>
-          <option value="17">17</option>
-          <option value="18">18</option>
-          <option value="19">19</option>
-          <option value="20">20</option>
-        </select>
-      </p>
-      <p><button onclick="generateCard()">Generate</button></p>
-    </div>
-  </div>
-  <div class="row">
-    <div id="history" class="col-12">
-      <p>Previously generated cards:</p>
-      <ul id="previousCards">
-      </ul>
-    </div>
-  </div>
-
-  <div id="disclaimer">Visa, Electron, MasterCard, American Express and Diners Club names and logos are
-    trademarks of their respective owners, which are in no way associated or affiliated with this site.<br/>
-    They are included purely for descriptive purposes and as such comply with "Fair Use".
-  </div>
+  <div w3-include-html="/footer.html"></div>
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="./js/cardgen.js"></script>

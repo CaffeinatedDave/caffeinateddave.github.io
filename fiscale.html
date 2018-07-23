@@ -28,46 +28,51 @@
   <link rel="stylesheet" type="text/css" href="css/css.css"/>
   <link rel="stylesheet" type="text/css" href="css/cardgen.css"/>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+  <script language="javascript" src="https://momentjs.com/downloads/moment.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.min.css">
 </head>
 
 <body>
   <div w3-include-html="header.html"></div>
 
-  <div class="row">
-    <div id="options" class="col-6">
-      <p>
-        <label for="firstname">First Name(s):</label><input id="firstname" name="cardtype"/><br/>
-        <label for="surname">Last Name(s):</label><input id="surname"/><br/>
-        <label for="sex">Sex:</label><select id="sex"><option value="0">M</option><option value="40">F</option></select><br/>
-        <div class="form-group required">
-          <div class="input-group">
-            <input id="dob" class="datepick"/>
-            <div class="input-group-addon">
-              <span class="glyphicon glyphicon-calendar"></span>
+  <div class="page container">
+    <div class="row">
+      <div id="options" class="col-6">
+        <p>
+          <label for="firstname">First Name(s):</label><input id="firstname" name="cardtype"/><br/>
+          <label for="surname">Last Name(s):</label><input id="surname"/><br/>
+          <label for="sex">Sex:</label><select id="sex"><option value="0">M</option><option value="40">F</option></select><br/>
+          <div class="form-group">
+            <div class='input-group date' id='datetimepicker1'>
+              <label for="DOB">Date of Birth:</label><input id="dob" class="datepick"/>
+              <span class="input-group-addon">
+                <span class="glyphicon glyphicon-calendar"></span>
+              </span>
             </div>
           </div>
-        </div>
-        <label for="country">Country of Birth:</label><select id="country"></select><br/>
-        <label for="province">Province of Birth:</label><select id="province" disabled="disabled"></select><br/>
-        <label for="city">City of Birth:</label><select id="city" disabled="disabled"></select><br/>
-      </p>
-      <p><button onclick="generateCard()">Generate</button></p>
+          <br/>
+          <label for="country">Country of Birth:</label><select id="country"></select><br/>
+          <label for="province">Province of Birth:</label><select id="province" disabled="disabled"></select><br/>
+          <label for="city">City of Birth:</label><select id="city" disabled="disabled"></select><br/>
+        </p>
+        <p><button onclick="generateCard()">Generate</button></p>
+      </div>
+      <div id="results" class="col-6">
+        <p>Codice Fiscale:</p>
+        <span id="result"></span>
+      </div>
     </div>
-    <div id="results" class="col-6">
-      <p>Codice Fiscale:</p>
-      <span id="result"></span>
+
+    <div id="disclaimer">
+      The tax identification number (Codice Fiscale) of an individual is valid only if it has already been released by the Italian Agenzia delle Entrate.<br/>
+      This tool may differ from your actual code in the cases of omocodia.
     </div>
   </div>
 
-  <div id="disclaimer">
-    The tax identification number (Codice Fiscale) of an individual is valid only if it has already been released by the Italian Agenzia delle Entrate.<br/>
-    This tool may differ from your actual code in the cases of omocodia.
-  </div>
+  <div w3-include-html="/footer.html"></div>
 
-  <script language="javascript" src="https://momentjs.com/downloads/moment.js"></script>
-  <script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
   <script src="./js/fiscale.js"></script>
   <script src="./js/generic.js"></script>
 </body>
