@@ -8,6 +8,11 @@ tr img {
   font-size: 2em;
 }
 
-#fixtures, th {
+#fixtures th {
+  text-align: center;
+}
+
+#fixtures td {
+  line-height: 3em;
   text-align: center;
 }

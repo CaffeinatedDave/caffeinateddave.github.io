@@ -3,40 +3,74 @@ loadAllGames = () => {
   fixtures.fixtures.forEach((list) => {
     const comp = list.competition
     list.fixtures.forEach((game) => {
-      var date = new Date(Date.parse(game.date + ' ' + game.time))
+      const time = game.time === undefined ? '' : game.time
+      const date = new Date(Date.parse(game.date + ' ' + time))
       sh = game.scoreH === undefined ? '' : game.scoreH
       sa = game.scoreA === undefined ? '' : game.scoreA
+      sho = game.scoreHOT === undefined ? '' : game.scoreHOT
+      sao = game.scoreAOT === undefined ? '' : game.scoreAOT
 
-      gameList.push({date: date, competition: comp, home: game.home, away: game.away, scoreH: sh, scoreA: sa})
+      gameList.push({date: date, competition: comp, home: game.home, away: game.away, scoreH: sh, scoreA: sa, scoreHOT: sho, scoreAOT: sao})
     })
   })
   return gameList.sort(function(a, b){return a.date-b.date;})
 }
 
-populateGames = () => {
-  const gameList = loadAllGames();
-  gameList.forEach((g) => {
+rebuildTable = (games) => {
+  $('#fixtures tbody').empty()
+
+  games.forEach((g) => {
     const date = ("00" + g.date.getDate()).slice(-2) + "/" +
       ("00" + (g.date.getMonth() + 1)).slice(-2) + "/" +
-      g.date.getFullYear() + " " +
+      g.date.getFullYear()
+    const t =
       ("00" + g.date.getHours()).slice(-2) + ":" +
       ("00" + g.date.getMinutes()).slice(-2)
+    const time = (t === '00:00') ? '' : t
 
-    $('#fixtures tbody').append('<tr>' +
-    '<td>' + g.competition + '</td>' +
-    '<td><img src="/img/' + g.home + '.png"/></td>' +
-    '<td class="score">' + g.scoreH + '</td>' +
-    '<td class="fixture">' +
-      '<span class="hidden-xs hidden-sm">' + fixtures.teams[g.home].name + ' vs ' + fixtures.teams[g.away].name + '</span>' +
-      '<span class="hidden-md hidden-lg score">-</span>' +
-    '</td>' +
-    '<td class="score">' + g.scoreA + '</td>' +
-    '<td><img src="/img/' + g.away + '.png"/></td>' +
-    '<td>' + date + '</td></tr>');
+    var table = $('<tr></tr>');
+
+    $('<td>' + g.competition + '</td>').appendTo(table);
+    $('<td><img src="/img/' + g.home + '.png"/></td>').appendTo(table);
+    if (g.scoreH === '' && g.scoreA === '') {
+      $('<td></td>').appendTo(table);
+    } else if (g.scoreHOT === '' && g.scoreAOT === '') {
+      $('<td><span class="score">' + g.scoreH + '</span></td>').appendTo(table);
+    } else {
+      const rtH = (g.scoreHOT === '') ? g.scoreH : g.scoreHOT
+      $('<td><span class="score">' + rtH + '</span><span>('+g.scoreH+')</span></td>').appendTo(table);
+    }
+    var mid = '<td class="fixture">' +
+      '<span class="hidden-xs hidden-sm">' +
+        fixtures.teams[g.home].name +
+          ' vs ' +
+        fixtures.teams[g.away].name +
+      '</span>' +
+      '<span class="hidden-md hidden-lg score">:</span>' +
+      '</td>';
+    $(mid).appendTo(table);
+    if (g.scoreH === '' && g.scoreA === '') {
+      $('<td></td>').appendTo(table);
+    } else if (g.scoreHOT === '' && g.scoreAOT === '') {
+      $('<td><span class="score">' + g.scoreA + '</span></td>').appendTo(table);
+    } else {
+      const rtA = (g.scoreAOT === '') ? g.scoreA : g.scoreAOT
+      $('<td><span class="score">' + rtA + '</span><span>('+g.scoreA+')</span></td>').appendTo(table);
+    }
+    $('<td><img src="/img/' + g.away + '.png"/></td>').appendTo(table);
+    $('<td>' + date + ' ' + time + '</td>').appendTo(table);
+
+    $('#fixtures tbody').append(table);
   });
 }
 
+populateGames = () => {
+  rebuildTable(loadAllGames())
+}
+
 populateSearch = () => {
+  $('#team1').empty()
+  $('#team2').empty()
   $('#team1').append('<option value="--">---</option>')
   $('#team2').append('<option value="--">---</option>')
   for (var t in fixtures.teams) {
@@ -62,34 +96,27 @@ fixtureSearch = () => {
     return display;
   });
 
-  $('#fixtures tbody').empty()
+  rebuildTable(gameList)
+}
 
-  gameList.forEach((g) => {
-    const date = ("00" + g.date.getDate()).slice(-2) + "/" +
-      ("00" + (g.date.getMonth() + 1)).slice(-2) + "/" +
-      g.date.getFullYear() + " " +
-      ("00" + g.date.getHours()).slice(-2) + ":" +
-      ("00" + g.date.getMinutes()).slice(-2)
-
-    $('#fixtures tbody').append('<tr>' +
-    '<td>' + g.competition + '</td>' +
-    '<td><img src="/img/' + g.home + '.png"/></td>' +
-    '<td class="score">' + g.scoreH + '</td>' +
-    '<td class="fixture">' +
-      '<span class="hidden-xs hidden-sm">' + fixtures.teams[g.home].name + ' vs ' + fixtures.teams[g.away].name + '</span>' +
-      '<span class="hidden-md hidden-lg score">-</span>' +
-    '</td>' +
-    '<td class="score">' + g.scoreA + '</td>' +
-    '<td><img src="/img/' + g.away + '.png"/></td>' +
-    '<td>' + date + '</td></tr>');
-  });
+loadFixtures = () => {
+  file = $('#fixtureListChoice')[0].value
+  $.getJSON('/ref/fixtures'+file+'.json')
+  .done(function(data) {
+    window.fixtures = data;
+    populateGames();
+    populateSearch();
+  })
+  .fail(function(x, text, error) {
+    console.log(error);
+  })
 }
 
 $(document).ready(() => {
-  populateGames();
-  populateSearch();
+  loadFixtures("EIHL1819")
   $('#team1').change(fixtureSearch)
   $('#team2').change(fixtureSearch)
+  $('#fixtureListChoice').change(loadFixtures)
 })
 
 

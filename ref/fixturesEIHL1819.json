@@ -1,4 +1,4 @@
-const fixtures = {
+{
   "teams": {
     "DUN": {"name": "Dundee Stars"},
     "FIF": {"name": "Fife Flyers"},
@@ -19,7 +19,7 @@ const fixtures = {
   "fixtures": [{
     "competition": "CC",
     "fixtures": [
-      {"date":"Sat 01 Sep 2018","home":"NOT","away":"SHF","time":"7:00 pm","scoreH":undefined,"scoreA":undefined},
+      {"date":"Sat 01 Sep 2018","home":"NOT","away":"SHF","time":"7:00 pm"},
       {"date":"Sat 08 Sep 2018","home":"GFD","away":"COV","time":"6:00 pm"},
       {"date":"Sat 08 Sep 2018","home":"DUN","away":"BEL","time":"7:00 pm"},
       {"date":"Sat 08 Sep 2018","home":"FIF","away":"GLS","time":"7:15 pm"},

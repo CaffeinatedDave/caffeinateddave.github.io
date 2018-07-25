@@ -28,9 +28,10 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/css/css.css"/>
   <link rel="stylesheet" type="text/css" href="/css/fixtures.css"/>
-  <script src="/ref/fixtureList.json"></script>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -38,6 +39,13 @@
 
   <div class="page container">
     <div id="search">
+      <div>
+        <select id="fixtureListChoice">
+          <option value="EIHL1718">UK Elite League Ice Hockey 2017/18</option>
+          <option value="EIHL1819" selected="selected">UK Elite League Ice Hockey 2018/19</option>
+        </select>
+
+      </div>
       <div class="row" id="teams">
         <div class="col-sm-6 col-xs-12">Team 1: <select id="team1"></select></div>
         <div class="col-sm-6 col-xs-12">Team 2: <select id="team2"></select></div>
