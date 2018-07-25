@@ -136,7 +136,7 @@ $(document).ready(() => {
 
 /**
 var date = ''
-var gamelist = []
+var gameList = []
 jQuery('section.container>div').each((e) => {
   const j = jQuery('section.container>div:nth('+e+')')
   const elem = j[0]
@@ -149,7 +149,7 @@ jQuery('section.container>div').each((e) => {
       const t = j.find('.game-row:nth('+g+') .score').html().trim();
       obj = {date: date, home: h, away: a, time: t}
 
-      gameList << obj;
+      gameList.push(obj);
     })
   }
 })
