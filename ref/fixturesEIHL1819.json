@@ -1,14 +1,14 @@
 {
   "teams": {
+    "BEL": {"name": "Belfast Giants"},
+    "CAR": {"name": "Cardiff Devils"},
+    "COV": {"name": "Coventry Blaze"},
     "DUN": {"name": "Dundee Stars"},
     "FIF": {"name": "Fife Flyers"},
     "GLS": {"name": "Glasgow Clan"},
-    "COV": {"name": "Coventry Blaze"},
     "GFD": {"name": "Guildford Flames"},
     "MCR": {"name": "Manchester Storm"},
     "MKL": {"name": "Milton Keynes Lightning"},
-    "BEL": {"name": "Belfast Giants"},
-    "CAR": {"name": "Cardiff Devils"},
     "NOT": {"name": "Nottingham Panthers"},
     "SHF": {"name": "Sheffield Steelers"}
   },

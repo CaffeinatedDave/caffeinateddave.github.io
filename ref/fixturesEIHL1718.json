@@ -2,16 +2,16 @@
   "settings": {
   },
   "teams": {
-    "DUN": {"name": "Dundee Stars"},
-    "FIF": {"name": "Fife Flyers"},
+    "BEL": {"name": "Belfast Giants"},
     "BRA": {"name": "Braehead Clan"},
-    "EDI": {"name": "Edinburgh Capitals"},
+    "CAR": {"name": "Cardiff Devils"},
     "COV": {"name": "Coventry Blaze"},
+    "DUN": {"name": "Dundee Stars"},
+    "EDI": {"name": "Edinburgh Capitals"},
+    "FIF": {"name": "Fife Flyers"},
     "GFD": {"name": "Guildford Flames"},
     "MCR": {"name": "Manchester Storm"},
     "MKL": {"name": "Milton Keynes Lightning"},
-    "BEL": {"name": "Belfast Giants"},
-    "CAR": {"name": "Cardiff Devils"},
     "NOT": {"name": "Nottingham Panthers"},
     "SHF": {"name": "Sheffield Steelers"}
   },
