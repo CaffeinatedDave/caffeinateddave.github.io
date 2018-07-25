@@ -1,10 +1,10 @@
 const cards = [
-  {name: 'Visa', bin: ['44','45','47','49'], length: 16, img: './img/visa_logo_7.gif'},
-  {name: 'Visa Electron', bin: ['4026','417500','4508','4844','4913','4917'], length: 16, img: './img/Visa_Electron.svg'},
-  {name: 'MasterCard', bin: ['51','52','53','54','55'], length: 16, img: './img/mastercard_logo_8.gif'},
-  {name: 'American Express', bin: ['34', '37'], length: 15, img: './img/american_express_logo_5.gif'},
-  {name: 'Diners Club International', bin: ['36'], length: 14, img: './img/diners_club.png'},
-  {name: 'Diners Club Carte Blanche', bin: ['300','301','302','303','304','305'], length: 14, img: './img/diners_club.png'}
+  {name: 'Visa', bin: ['44','45','47','49'], length: 16, img: '/img/visa_logo_7.gif'},
+  {name: 'Visa Electron', bin: ['4026','417500','4508','4844','4913','4917'], length: 16, img: '/img/Visa_Electron.svg'},
+  {name: 'MasterCard', bin: ['51','52','53','54','55'], length: 16, img: '/img/mastercard_logo_8.gif'},
+  {name: 'American Express', bin: ['34', '37'], length: 15, img: '/img/american_express_logo_5.gif'},
+  {name: 'Diners Club International', bin: ['36'], length: 14, img: '/img/diners_club.png'},
+  {name: 'Diners Club Carte Blanche', bin: ['300','301','302','303','304','305'], length: 14, img: '/img/diners_club.png'}
 ]
 
 populateCardTypes = () => {
@@ -40,7 +40,7 @@ generateCard = () => {
   if (cardIdx === '99999') {
     start = $('#bin')[0].value
     length = $('#length')[0].value - start.length - 1
-    img = './img/generic_card.png'
+    img = '/img/generic_card.png'
   } else {
     const possible = cards[cardIdx].bin
     start = possible[Math.floor(Math.random() * possible.length)]

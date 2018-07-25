@@ -1,0 +1,13 @@
+
+tr img {
+  height: 3em;
+}
+
+.score {
+  font-weight: 900;
+  font-size: 2em;
+}
+
+#fixtures, th {
+  text-align: center;
+}

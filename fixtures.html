@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="/css/css.css"/>
+  <link rel="stylesheet" type="text/css" href="/css/fixtures.css"/>
   <script src="/ref/fixtureList.json"></script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
@@ -36,11 +37,19 @@
   <div w3-include-html="/header.html"></div>
 
   <div class="page container">
+    <div id="search">
+      <div id="teams">
+        Team 1: <select id="team1"></select>
+        Team 2: <select id="team2"></select>
+      </div>
+    </div>
     <table class="table table-striped table-sm" id="fixtures">
       <thead>
         <tr>
-          <th>Competition</th>
+          <th>Comp</th>
           <th>Home</th>
+          <th>&nbsp;</th>
+          <th>&nbsp;</th>
           <th>&nbsp;</th>
           <th>Away</th>
           <th>Date</th>
@@ -52,7 +61,7 @@
 
     <div id="disclaimer">
       The team names and logos listed above are trademarks of their respective owners, which are in no way associated or affiliated with this site.<br/>
-      They are included purely for descriptive purposes and as such comply with "Fair Use".
+      They are included purely for descriptive and informational purposes and as such comply with "Fair Use".
     </div>
   </div>
 
