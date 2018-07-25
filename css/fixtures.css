@@ -3,6 +3,10 @@ tr img {
   height: 3em;
 }
 
+tr img.spinner {
+  height: 10em;
+}
+
 .score {
   font-weight: 900;
   font-size: 2em;

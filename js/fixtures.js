@@ -69,9 +69,6 @@ populateGames = () => {
 }
 
 populateSearch = () => {
-  $('#team1').empty();
-  $('#team2').empty();
-  $('#competition').empty();
   $('#team1').append('<option value="--">---</option>');
   $('#team2').append('<option value="--">---</option>');
   $('#competition').append('<option value="--">---</option>');
@@ -110,6 +107,12 @@ fixtureSearch = () => {
 }
 
 loadFixtures = () => {
+  $('#team1').empty();
+  $('#team2').empty();
+  $('#competition').empty();
+  $('#fixtures tbody').empty();
+  $('#fixtures tbody').append('<tr><td colspan="7"><img class="spinner" src="/img/loading.gif"/></td></tr>');
+
   file = $('#fixtureListChoice')[0].value
   $.getJSON('/ref/fixtures'+file+'.json')
   .done(function(data) {
