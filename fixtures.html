@@ -39,16 +39,26 @@
 
   <div class="page container">
     <div id="search">
-      <div>
-        <select id="fixtureListChoice">
+      <div class="lists">
+        <label for="fixtureListChoice">Fixtures: </label>
+        <select name="fixtureListChoice" id="fixtureListChoice">
           <option value="EIHL1718">UK Elite League Ice Hockey 2017/18</option>
           <option value="EIHL1819" selected="selected">UK Elite League Ice Hockey 2018/19</option>
         </select>
 
       </div>
+      <div class="row" id="competitions">
+        <div class="col-sm-12 col-xs-12">
+          <label for="competition">Competition: </label><select name="competition" id="competition"></select>
+        </div>
+      </div>
       <div class="row" id="teams">
-        <div class="col-sm-6 col-xs-12">Team 1: <select id="team1"></select></div>
-        <div class="col-sm-6 col-xs-12">Team 2: <select id="team2"></select></div>
+        <div class="col-sm-6 col-xs-12">
+          <label for="team1">Team 1: </label><select name="team1" id="team1"></select>
+        </div>
+        <div class="col-sm-6 col-xs-12">
+          <label for="team2">Team 2: </label><select name="team2" id="team2"></select>
+        </div>
       </div>
     </div>
     <table class="table table-striped table-sm" id="fixtures">

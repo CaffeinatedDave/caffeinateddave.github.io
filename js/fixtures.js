@@ -69,19 +69,25 @@ populateGames = () => {
 }
 
 populateSearch = () => {
-  $('#team1').empty()
-  $('#team2').empty()
-  $('#team1').append('<option value="--">---</option>')
-  $('#team2').append('<option value="--">---</option>')
+  $('#team1').empty();
+  $('#team2').empty();
+  $('#competition').empty();
+  $('#team1').append('<option value="--">---</option>');
+  $('#team2').append('<option value="--">---</option>');
+  $('#competition').append('<option value="--">---</option>');
   for (var t in fixtures.teams) {
-    $('#team1').append('<option value="'+t+'">'+fixtures.teams[t].name+'</option>')
-    $('#team2').append('<option value="'+t+'">'+fixtures.teams[t].name+'</option>')
+    $('#team1').append('<option value="'+t+'">'+fixtures.teams[t].name+'</option>');
+    $('#team2').append('<option value="'+t+'">'+fixtures.teams[t].name+'</option>');
   };
+  for (var c in fixtures.competitions) {
+    $('#competition').append('<option value="'+c+'">'+fixtures.competitions[c].name+'</option>');
+  }
 }
 
 fixtureSearch = () => {
   var search1 = $('#team1')[0].value
   var search2 = $('#team2')[0].value
+  var competition = $('#competition')[0].value
   const gameList = loadAllGames().filter((x) => {
     var display = false
 
@@ -92,6 +98,10 @@ fixtureSearch = () => {
     if (search2 === x.away && search1 === '--') display = true;
     if (search1 === x.home && search2 === x.away) display = true;
     if (search1 === x.away && search2 === x.home) display = true;
+
+    if (competition !== '--') {
+      if (x.competition !== competition) display = false;
+    }
 
     return display;
   });
@@ -116,6 +126,7 @@ $(document).ready(() => {
   loadFixtures("EIHL1819")
   $('#team1').change(fixtureSearch)
   $('#team2').change(fixtureSearch)
+  $('#competition').change(fixtureSearch)
   $('#fixtureListChoice').change(loadFixtures)
 })
 
