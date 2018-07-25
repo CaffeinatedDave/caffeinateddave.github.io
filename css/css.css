@@ -16,11 +16,6 @@ body>div.container {
   width: 80%;
   margin: auto;
 }
-@media only screen and (max-width: 600px) {
-  body>div.container {
-    width: 100%;
-  }
-}
 .page {
   min-height: 95vh;
 }
@@ -36,4 +31,15 @@ footer {
   width: 80%;
   margin: auto;
   font-size: 0.6em;
+}
+
+@media only screen and (max-width: 600px) {
+  body>div.container {
+    width: 100%;
+    padding: 0;
+  }
+
+  table {
+    width: 100%;
+  }
 }
