@@ -1,0 +1,173 @@
+[
+  {
+    "title": "7 Habits of Highly Effective People",
+    "author": "Stephen R. Covey",
+    "tags": ["people", "self"],
+    "links": [
+      {
+        "type": "amazon",
+        "link": "https://amzn.to/2JuGypL"
+      }
+    ]
+  },
+  {
+    "title": "The Art of People",
+    "author": "Dave Kerpen",
+    "tags": ["people", "management"],
+    "links": [
+      {
+        "type": "amazon",
+        "link": "https://amzn.to/2zKD2rM"
+      }
+    ]
+  },
+  {
+    "title": "Chimp Paradox",
+    "author": "Prof. Steve Peters",
+    "tags": ["people", "self"],
+    "links": [
+      {
+        "type": "amazon",
+        "link": "https://amzn.to/2zNxGMF"
+      }
+    ]
+  },
+  {
+    "title": "Drive",
+    "author": "Daniel H. Pink",
+    "tags": ["people", "management", "motivation"],
+    "links": [
+      {
+        "type": "amazon",
+        "link": "https://amzn.to/2zOt3BF"
+      }
+    ]
+  },
+  {
+    "title": "The Five Dysfunctions of a Team",
+    "author": "Patrick M. Lencioni",
+    "tags": ["people", "management"],
+    "links": [
+      {
+        "type": "amazon",
+        "link": "https://amzn.to/2zL9R8c"
+      }
+    ]
+  },
+  {
+    "title": "How to Win Friends and Influence People",
+    "author": "Dale Carnegie",
+    "tags": ["people", "self"],
+    "links": [
+      {
+        "type": "amazon",
+        "link": "https://amzn.to/2Lu64NY"
+      }
+    ]
+  },
+  {
+    "title": "Leaders Eat Last",
+    "author": "Simon Sinek",
+    "tags": ["people", "management"],
+    "links": [
+      {
+        "type": "amazon",
+        "link": "https://amzn.to/2zPnlQ8"
+      }
+    ]
+  },
+  {
+    "title": "The Lean Startup",
+    "author": "Eric Ries",
+    "tags": ["starup", "management"],
+    "links": [
+      {
+        "type": "amazon",
+        "link": "https://amzn.to/2LvYWAk"
+      }
+    ]
+  },
+  {
+    "title": "Mindset",
+    "author": "Carol Dweck",
+    "tags": ["people", "self"],
+    "links": [
+      {
+        "type": "amazon",
+        "link": "https://amzn.to/2Lq34lr"
+      }
+    ]
+  },
+  {
+    "title": "Peopleware: Productive Projects and Teams",
+    "author": "Tom DeMarco",
+    "tags": ["people", "management", "teams"],
+    "links": [
+      {
+        "type": "amazon",
+        "link": "https://amzn.to/2LsvdZd"
+      }
+    ]
+  },
+  {
+    "title": "Radical Candor",
+    "author": "Kim Scott",
+    "tags": ["people", "management", "mentoring"],
+    "links": [
+      {
+        "type": "amazon",
+        "link": "https://amzn.to/2JvI8Ic"
+      }
+    ]
+  },
+  {
+    "title": "Scaling Teams",
+    "author": "David Loftesness, Alexander Grosse",
+    "tags": ["teams", "management"],
+    "links": [
+      {
+        "type": "amazon",
+        "link": "https://amzn.to/2Lp6VTm"
+      }
+    ]
+  },
+  {
+    "title": "A Seat at the Table: IT Leadership in the Age of Agility",
+    "author": "Mark Schwartz",
+    "links": [
+      {
+        "type": "amazon",
+        "link": "https://amzn.to/2uJi2Mu"
+      }
+    ]
+  },
+  {
+    "title": "SUMO (Shut Up, Move On)",
+    "author": "Paul McGee",
+    "tags": ["people", "self"],
+    "links": [
+      {
+        "type": "amazon",
+        "link": "https://amzn.to/2JwNmDw"
+      }
+    ]
+  },
+  {
+    "title": "Team Geek",
+    "author": "Brian W. Fitzpatrick",
+    "tags": ["people", "teams"],
+    "links": []
+  },
+  {
+    "title": "Sprint",
+    "author": "Jake Knapp, John Zeratsky, Braden Kowitz",
+    "tags": ["teams", "engineering", "prototypes"],
+    "links": [
+      {
+        "type": "amazon",
+        "link": "https://amzn.to/2n5Ukqm"
+      }
+    ]
+  }
+
+]
