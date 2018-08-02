@@ -14,7 +14,7 @@ function bookSearch() {
   $('tbody').empty();
 
   window.readingList.forEach((b) => {
-    if (b.title.toUpperCase().indexOf(filter) > -1 || b.author.toUperCase().indexOf(filter) > -1) {
+    if (b.title.toUpperCase().indexOf(filter) > -1 || b.author.toUpperCase().indexOf(filter) > -1) {
 
       var row = $('<tr></tr>');
 
@@ -41,6 +41,5 @@ function twitterWindow() {
 }
 
 $(document).ready(() => {
-  loadBooks()
-  $('#bookSearch').change(bookSearch)
+  loadBooks();
 })
