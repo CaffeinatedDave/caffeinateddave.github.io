@@ -31,7 +31,11 @@ rebuildTable = (games) => {
     var table = $('<tr></tr>');
 
     $('<td>' + g.competition + '</td>').appendTo(table);
-    $('<td><img src="/img/' + g.home + '.png"/></td>').appendTo(table);
+    if (fixtures.teams[g.home].logo !== undefined) {
+      $('<td><img src="/img/' + fixtures.teams[g.home].logo + '"/></td>').appendTo(table);
+    } else {
+      $('<td><img src="/img/' + g.home + '.png"/></td>').appendTo(table);
+    }
     if (g.scoreH === '' && g.scoreA === '') {
       $('<td></td>').appendTo(table);
     } else if (g.scoreHOT === '' && g.scoreAOT === '') {
@@ -57,7 +61,11 @@ rebuildTable = (games) => {
       const rtA = (g.scoreAOT === '') ? g.scoreA : g.scoreAOT
       $('<td><span class="score">' + rtA + '</span><span>('+g.scoreA+')</span></td>').appendTo(table);
     }
-    $('<td><img src="/img/' + g.away + '.png"/></td>').appendTo(table);
+    if (fixtures.teams[g.away].logo !== undefined) {
+      $('<td><img src="/img/' + fixtures.teams[g.away].logo + '"/></td>').appendTo(table);
+    } else {
+      $('<td><img src="/img/' + g.away + '.png"/></td>').appendTo(table);
+    }
     $('<td>' + date + ' ' + time + '</td>').appendTo(table);
 
     $('#fixtures tbody').append(table);
