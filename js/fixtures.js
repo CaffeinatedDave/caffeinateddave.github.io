@@ -129,12 +129,23 @@ loadFixtures = () => {
     populateSearch();
   })
   .fail(function(x, text, error) {
-    console.log(error);
+    if (x.status == '404') {
+      console.log("Can't find requested fixture list.")
+      $('#fixtureListChoice').val('EIHL1819')
+      loadFixtures()
+    } else {
+      console.log(error);
+    }
   })
 }
 
 $(document).ready(() => {
-  loadFixtures("EIHL1819")
+  var urlParams = new URLSearchParams(window.location.search)
+
+  var fixtures = urlParams.get('fixtures') === null ? 'EIHL1819' : urlParams.get('fixtures')
+  $('#fixtureListChoice').val(fixtures)
+  loadFixtures()
+
   $('#team1').change(fixtureSearch)
   $('#team2').change(fixtureSearch)
   $('#competition').change(fixtureSearch)
