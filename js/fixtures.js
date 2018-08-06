@@ -77,7 +77,7 @@ populateGames = () => {
 }
 
 populateSearch = () => {
-  $('#competition').hide();
+  $('#competitions').hide();
   $('#team1').append('<option value="--">---</option>');
   $('#team2').append('<option value="--">---</option>');
   $('#competition').append('<option value="--">---</option>');
@@ -88,8 +88,8 @@ populateSearch = () => {
   for (var c in fixtures.competitions) {
     $('#competition').append('<option value="'+c+'">'+fixtures.competitions[c].name+'</option>');
   }
-  if (fixtures.competitions.length > 1) {
-    $('#competition').show();
+  if ($('#competition').children().length > 2) {
+    $('#competitions').show();
   }
 }
 
