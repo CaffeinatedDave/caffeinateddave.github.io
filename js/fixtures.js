@@ -89,7 +89,7 @@ populateSearch = () => {
     $('#competition').append('<option value="'+c+'">'+fixtures.competitions[c].name+'</option>');
   }
   if (fixtures.competitions.length > 1) {
-    $('#competition').display();
+    $('#competition').show();
   }
 }
 
