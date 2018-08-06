@@ -135,6 +135,10 @@ loadFixtures = () => {
   .fail(function(x, text, error) {
     if (x.status == '404') {
       console.log("Can't find requested fixture list.")
+      // It probably doesn't exist because it's the one passed in via params, so remove them all here...
+      $('#fixtureListChoice option').each(function(){
+        if (this.getAttribute("data-custom") === 'yes') {this.remove()}
+      });
       $('#fixtureListChoice').val('EIHL1819')
       loadFixtures()
     } else {
