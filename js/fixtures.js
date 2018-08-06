@@ -156,6 +156,19 @@ $(document).ready(() => {
     })
 
     var fixtures = urlParams.get('fixtures') === null ? 'EIHL1819' : urlParams.get('fixtures')
+
+    var exists = false;
+    $('#fixtureListChoice option').each(function(){
+        if (this.value == fixtures) {
+            exists = true;
+            return false;
+        }
+    });
+
+    if (!exists) {
+      $('#fixtureListChoice').prepend('<option data-custom="yes" value="'+fixtures+'">'+fixtures+'</option>');
+      $('#fixtureListChoice').prepend('<option data-custom="yes" disabled="disabled">-- Custom --</option>');
+    }
     $('#fixtureListChoice').val(fixtures)
     loadFixtures()
   })
