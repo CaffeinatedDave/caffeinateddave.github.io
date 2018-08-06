@@ -32,9 +32,9 @@ rebuildTable = (games) => {
 
     $('<td>' + g.competition + '</td>').appendTo(table);
     if (fixtures.teams[g.home].logo !== undefined) {
-      $('<td><img src="/img/' + fixtures.teams[g.home].logo + '"/></td>').appendTo(table);
+      $('<td><img src="/fixtures-ref/imgs/' + fixtures.teams[g.home].logo + '"/></td>').appendTo(table);
     } else {
-      $('<td><img src="/img/' + g.home + '.png"/></td>').appendTo(table);
+      $('<td><img src="/fixtures-ref/imgs/' + g.home + '.png"/></td>').appendTo(table);
     }
     if (g.scoreH === '' && g.scoreA === '') {
       $('<td></td>').appendTo(table);
@@ -62,9 +62,9 @@ rebuildTable = (games) => {
       $('<td><span class="score">' + rtA + '</span><span>('+g.scoreA+')</span></td>').appendTo(table);
     }
     if (fixtures.teams[g.away].logo !== undefined) {
-      $('<td><img src="/img/' + fixtures.teams[g.away].logo + '"/></td>').appendTo(table);
+      $('<td><img src="/fixtures-ref/imgs/' + fixtures.teams[g.away].logo + '"/></td>').appendTo(table);
     } else {
-      $('<td><img src="/img/' + g.away + '.png"/></td>').appendTo(table);
+      $('<td><img src="/fixtures-ref/imgs/' + g.away + '.png"/></td>').appendTo(table);
     }
     $('<td>' + date + ' ' + time + '</td>').appendTo(table);
 
@@ -77,6 +77,7 @@ populateGames = () => {
 }
 
 populateSearch = () => {
+  $('#competition').hide();
   $('#team1').append('<option value="--">---</option>');
   $('#team2').append('<option value="--">---</option>');
   $('#competition').append('<option value="--">---</option>');
@@ -86,6 +87,9 @@ populateSearch = () => {
   };
   for (var c in fixtures.competitions) {
     $('#competition').append('<option value="'+c+'">'+fixtures.competitions[c].name+'</option>');
+  }
+  if (fixtures.competitions.length > 1) {
+    $('#competition').display();
   }
 }
 
@@ -122,7 +126,7 @@ loadFixtures = () => {
   $('#fixtures tbody').append('<tr><td colspan="7"><img class="spinner" src="/img/loading.gif"/></td></tr>');
 
   file = $('#fixtureListChoice')[0].value
-  $.getJSON('/ref/fixtures'+file+'.json')
+  $.getJSON('/fixtures-ref/'+file+'.json')
   .done(function(data) {
     window.fixtures = data;
     populateGames();
@@ -142,9 +146,22 @@ loadFixtures = () => {
 $(document).ready(() => {
   var urlParams = new URLSearchParams(window.location.search)
 
-  var fixtures = urlParams.get('fixtures') === null ? 'EIHL1819' : urlParams.get('fixtures')
-  $('#fixtureListChoice').val(fixtures)
-  loadFixtures()
+  $.getJSON('/fixtures-ref/metadata.json')
+  .done(function(data) {
+    data.available.forEach((t) => {
+      $('#fixtureListChoice').append('<option disabled="disabled">-- ' + t.title + ' --</option>')
+      t.lists.forEach((l) => {
+        $('#fixtureListChoice').append('<option value="'+l.link+'">' + l.name + '</option>')
+      })
+    })
+
+    var fixtures = urlParams.get('fixtures') === null ? 'EIHL1819' : urlParams.get('fixtures')
+    $('#fixtureListChoice').val(fixtures)
+    loadFixtures()
+  })
+  .fail(function(x, text, error) {
+    console.log(error);
+  })
 
   $('#team1').change(fixtureSearch)
   $('#team2').change(fixtureSearch)
