@@ -16,8 +16,14 @@ loadAllGames = () => {
   return gameList.sort(function(a, b){return a.date-b.date;})
 }
 
+const monthNames = ["January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December"]
+
 rebuildTable = (games) => {
   $('#fixtures tbody').empty()
+  $('#quickLinks').empty()
+
+  var monthHeader = ""
 
   games.forEach((g) => {
     const date = ("00" + g.date.getDate()).slice(-2) + "/" +
@@ -27,6 +33,15 @@ rebuildTable = (games) => {
       ("00" + g.date.getHours()).slice(-2) + ":" +
       ("00" + g.date.getMinutes()).slice(-2)
     const time = (t === '00:00') ? '' : t
+
+    const thisMonth = "" + monthNames[g.date.getMonth()] + " " + g.date.getFullYear();
+
+    if (thisMonth !== monthHeader) {
+      monthHeader = thisMonth;
+      $('#fixtures tbody').append('<tr><td colspan="7" id="'+monthHeader+'"><span style="float:right"><a href="#top">^</a></span><h3>'+monthHeader+'</h3></td></tr>');
+
+      $('#quickLinks').append('<li><a href="#'+monthHeader+'">'+monthHeader+'</a></li>');
+    }
 
     var table = $('<tr></tr>');
 
