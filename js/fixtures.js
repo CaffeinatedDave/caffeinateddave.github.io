@@ -141,6 +141,7 @@ loadFixtures = () => {
   $('#fixtures tbody').append('<tr><td colspan="7"><img class="spinner" src="/img/loading.gif"/></td></tr>');
 
   file = $('#fixtureListChoice')[0].value
+  window.history.pushState({},null,'/fixtures?fixtures='+file)
   $.getJSON('/fixtures-ref/'+file+'.json')
   .done(function(data) {
     window.fixtures = data;
