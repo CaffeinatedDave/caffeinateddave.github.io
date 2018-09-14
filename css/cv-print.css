@@ -1,0 +1,7 @@
+body {
+  padding-top: 0px;
+}
+
+@media print {
+    .newPage {page-break-before: always;}
+}

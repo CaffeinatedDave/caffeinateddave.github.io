@@ -20,6 +20,11 @@ body>div.container {
   min-height: 95vh;
 }
 
+.navbar-fixed-top {
+  top: 0;
+  position: absolute;
+}
+
 footer {
   background-color: black;
   color: #ccc;
