@@ -2,7 +2,12 @@ body {
   text-align: justify;
   position: relative;
 }
-
+ul, p {
+  padding-left: 1em;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  margin: 3px 0;
+}
 #printButton {
   position: fixed;
   top: 70px;
