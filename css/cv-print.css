@@ -3,6 +3,9 @@ body {
 }
 
 @media print {
-    .newPage {page-break-before: always;}
+    .newPage {
+      padding-top:10mm;
+      page-break-before: always;
+    }
 }
 @page { size: auto;  margin: 0mm 10mm; }
