@@ -8,12 +8,8 @@ Homepage for things I find useful... Maybe you will too?
 
 ### Tools
 Couple handy helpers for things I use a lot
-##### [Card Generator](Caffeinateddave.github.io/cardgen)
+##### [Card Generator](Caffeinateddave.xyz/cardgen)
 Generates card numbers from some major ranges.
-
-###### To come:
-* Fiscale Code (Italian NI-like Tax code) Generator
-* ...
 
 ### Misc
 
