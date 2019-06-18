@@ -41,11 +41,13 @@
       <pre>
 -d, --detach
       Run in detached mode (gives you the console back)
--p {local port}:{remote port}
-      Maps remote port on the container to local port at localhost
-        eg - -p 8080:80 would mean you could hit http://localhost:8080 and you'd get the same result as hitting http://{docker_id}:80/
 --name {something}
       Name your container something memorable (like Eric)
+-p {local port}:{remote port}
+      Maps remote port on the container to local port at localhost
+        eg - -p 8080:80 would mean you could hit http://localhost:8080 and you'd get the same result as hitting http://{docker_ip}:80/
+-? --???
+      Set environmental variables to
 -v {localVolume}:{remoteVolume}[:{options}]
       Mount a volume to the container, local must be an absolute path (no ./something)
       Options are :ro or :rw, for read-only or read-write, respectively
@@ -65,10 +67,16 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 0756ba3e5320        nginx               "nginx -g 'daemon of…"   4 hours ago         Up 2 hours          0.0.0.0:80->80/tcp   github-nginx
       </pre>
 
+      <h3>See details for a container:</h3>
+      <pre>docker inspect [flags] {image}</pre>
+      <p>{image} is the name you gave the container when you started it above</p>
+
       <h3>Misc tricks</h3>
       <p>Sometimes, you just want to jump onto the box (container) and look around...<br/>
-        <pre>docker exec -t -i {container ID} /bin/bash</pre>
-        gives you this option
+        <pre>docker exec -t -i {container name/id} /bin/bash</pre>
+        gives you this option - assuming that the base image used is one that comes with bash (eg ubuntu)<br/>
+        This can also be used for running any other scripts etc on each container, for example,
+        kafka might come with create_topics.sh, which you can run the same way.
       </p>
     </div>
 
