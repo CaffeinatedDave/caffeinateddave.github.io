@@ -1,5 +1,24 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
+  color: rgb(5,5,5);
+  background-color: rgb(250, 244, 211);
+  border-top: 5px solid hsl(220, 50%, 75%);
+  margin: 0 auto;
+  bottom: 0;
+  top: 0;
   padding-top: 70px;
+}
+
+.navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand {
+  color: rgb(5,5,5);
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover, .navbar-nav>li>.dropdown-menu {
+  background-color: rgb(113, 117, 104);
+  color: rgb(250, 244, 211);
 }
 
 ul {
@@ -13,7 +32,7 @@ ul.dropdown-menu>li{
 }
 
 body>div.container {
-  width: 80%;
+  width: 95%;
   margin: auto;
 }
 .page {
@@ -23,10 +42,11 @@ body>div.container {
 .navbar-fixed-top {
   top: 0;
   position: absolute;
+  background-color: rgb(231, 119, 40);
 }
 
 footer {
-  background-color: black;
+  background-color: rgb(5,5,5);
   color: #ccc;
   padding: 3px;
   min-height: 5vh;
@@ -36,6 +56,69 @@ footer {
   width: 80%;
   margin: auto;
   font-size: 0.6em;
+}
+
+/* Borrowed from https://codepen.io/gpyne/pen/iElhp */
+.hexagon {
+  position: relative;
+  display: inline-block;
+  /* left/right margin approx. 25% of .hexagon width + spacing */
+  margin: 1px 26px;
+  background-color: rgb(231, 119, 40);
+  text-align: center;
+}
+.hexagon, .hexagon::before, .hexagon::after {
+  /* height is width * 1.732 */
+  width: 100px;
+  height: 173px;
+}
+.hexagon::before {
+  background-color: inherit;
+  content: "";
+  position: absolute;
+  left: 0;
+  transform: rotate(-60deg);
+}
+.hexagon::after {
+  background-color: inherit;
+  content: "";
+  position: absolute;
+  left: 0;
+  transform: rotate(60deg);
+}
+.hexagon:nth-child(even) {
+  /* top approx. 50% of .hexagon height + spacing */
+  top: 88px;
+}
+.hexagon:hover {
+  background-color: rgb(46, 134, 171);
+  cursor: pointer;
+  z-index: 105;
+}
+.hexanone {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 173px;
+  margin: 1px 18px;
+}
+.hexanone:nth-child(even) {
+  top: 59px;
+}
+.hexagontent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 140%;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  z-index: 100;
+}
+.honeycomb {
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 88px;
 }
 
 @media only screen and (max-width: 800px) {
