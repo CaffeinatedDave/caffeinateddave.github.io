@@ -5,13 +5,28 @@
 }
 body {
   color: rgb(5,5,5);
-  background-color: rgb(250, 244, 211);
-  border-top: 5px solid hsl(220, 50%, 75%);
+  background-color: rgb(210, 210, 190);
   margin: 0 auto;
   bottom: 0;
   top: 0;
   padding-top: 70px;
 }
+
+#cv-inline-container {
+  border: 1px solid black;
+  background-color: white;
+}
+
+p {
+  padding: 0 1em;
+}
+h3>span,h4>span {
+  background: linear-gradient(90deg, rgba(231,119,40,1) 80%, rgba(210,210,190,0) 100%);
+  margin: auto;
+  padding-right: 20%;
+}
+h3>span {padding-left: 5px;}
+h4>span {padding-left: 10px;}
 
 .navbar-default .navbar-nav>li>a, .navbar-default .navbar-brand {
   color: rgb(5,5,5);
@@ -119,6 +134,43 @@ footer {
   margin: 0 auto;
   text-align: center;
   padding-bottom: 88px;
+}
+
+#game ul {
+  margin: auto;
+}
+#game ul > li {
+  display: inline-block;
+  margin: 10px auto;
+}
+#game > h3, #game > h5 {
+  text-align: center;
+}
+.motivator > img {
+  width: 100%;
+}
+
+.mot-hi {position: relative; margin-top: 0px;}
+.mot-md {position: relative; margin-top: 50px;}
+.mot-lo {position: relative; margin-top: 100px;}
+
+
+.motivator{
+  background-color: #eee;
+  border: 2px solid black;
+  width: 10%;
+  min-width:92px;
+  margin: 5px;
+  text-align: center;
+}
+
+#explanation {
+  border: 1px solid black;
+  padding: 1em;
+  background-color: #eee;
+}
+
+@media only screen and (max-width: 1000px) {
 }
 
 @media only screen and (max-width: 800px) {

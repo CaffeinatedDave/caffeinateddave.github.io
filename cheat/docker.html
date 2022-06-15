@@ -33,39 +33,51 @@
     <div class="page container">
       <h1> Docker </h1>
 
-      <h3>Start a container:</h3>
-      <pre>docker run [flags] {image}</pre>
-      <p>{image} is the image name from <a href="https://hub.docker.com/explore/">Docker Hub*</a></p>
+      <p>I want to...</p>
 
-      <h5>Extra flags:</h5>
-      <pre>
--d, --detach
-      Run in detached mode (gives you the console back)
---name {something}
-      Name your container something memorable (like Eric)
--p {local port}:{remote port}
-      Maps remote port on the container to local port at localhost
-        eg - -p 8080:80 would mean you could hit http://localhost:8080 and you'd get the same result as hitting http://{docker_ip}:80/
--? --???
-      Set environmental variables to
--v {localVolume}:{remoteVolume}[:{options}]
-      Mount a volume to the container, local must be an absolute path (no ./something)
-      Options are :ro or :rw, for read-only or read-write, respectively
-      </pre>
+      <div class="panel panel-default">
+        <div class="primary" data-toggle="collapse" data-target="#collapseStart" aria-expanded="false" aria-controls="collapseStart">
+          <h4>Start a Container</h4>
+        </div>
+        <div class="collapse panel" id="collapseStart">
+          <pre>docker run [flags] {image}</pre>
+          <p>{image} is the image name from <a href="https://hub.docker.com/explore/">Docker Hub*</a></p>
+          <h5>Extra flags:</h5>
+          <pre>
+  -d, --detach
+        Run in detached mode (gives you the console back, rather than logs)
+  --name {something}
+        Name your container something memorable (like Eric)
+  -p {local port}:{remote port}
+        Maps remote port on the container to local port at localhost
+          eg - -p 8080:80 would mean you could hit http://localhost:8080 and you'd get the same result as hitting http://{docker_ip}:80/
+        You can use this flag multiple times to map multiple ports / rangers
+  -? --???
+        Set environmental variables to
+  -v {localVolume}:{remoteVolume}[:{options}]
+        Mount a volume to the container, local must be an absolute path (no ./something)
+        Options are :ro or :rw, for read-only or read-write, respectively
+          </pre>
+        </div>
+        <div class="primary" data-toggle="collapse" data-target="#collapseInvestigate" aria-expanded="false" aria-controls="collapseInvestigate">
+          <h4>Investigate a Container</h4>
+        </div>
+        <div class="collapse panel" id="collapseInvestigate">
+          <pre>docker ps [options]</pre>
+          <h5>Extra flags:</h5>
+          <pre>
+  -a, --all
+        Show all containers (default is only running containers)
+          </pre>
+          <h5>Output:</h5>
+          <pre>
+    $ docker ps
+    CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
+    0756ba3e5320        nginx               "nginx -g 'daemon of…"   4 hours ago         Up 2 hours          0.0.0.0:80->80/tcp   github-nginx
+          </pre>
+        </div>
+      </div>
 
-      <h3>Check on running containers:</h3>
-      <pre>docker ps [options]</pre>
-      <h5>Extra flags:</h5>
-      <pre>
--a, --all
-      Show all containers (default is only running containers)
-      </pre>
-      <h5>Output:</h5>
-      <pre>
-$ docker ps
-CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                NAMES
-0756ba3e5320        nginx               "nginx -g 'daemon of…"   4 hours ago         Up 2 hours          0.0.0.0:80->80/tcp   github-nginx
-      </pre>
 
       <h3>See details for a container:</h3>
       <pre>docker inspect [flags] {image}</pre>
