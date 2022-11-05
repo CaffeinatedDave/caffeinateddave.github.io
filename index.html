@@ -30,13 +30,55 @@
   <body>
     <div w3-include-html="/header.html"></div>
 
-    <div class="page container">
-      <h1>Homepage</h1>
+    <div class="page container pirate">
+      <h1>Pirate Code for Capt. Dave Chaston</h1>
+      <p>
+        Inspired by the words of Sam Conniff Allende in <a href="#">Be More Pirate</a>, as well as the advice of people who know this stuff far more than I do. I've set out a charter of what I stand for, what I want to do, and what you'll get from me if you work/sail with me. Consider this a Mission Statement if you want to keep it in corporate terms, but keeping with the theme of the book (and who doesn't like pirates anyway!), I'm calling it my Pirate Code.
+      </p>
+
+      <button type="button" class="collapsible">1. Make Shit Up. (Follow the North Star)</button>
+      <div class="content">
+        <p>As a leader, I want to enable my crew to bring their intuition to the fore. Be that in the face of the unknown, sailing into uncharted waters, or just working from incomplete datasets. I trust them to want what we as a team want, and that they will take what they believe to be the best course of action for their situation - and even if later further information comes to show we or they were wrong, we celebrate that together, as a new source of information we can all learn from. There is no shame in abandoning an old plan in the face of unexpected disaster, be that kraken or technical feasibility, because we can always make up new shit from where we find ourselves, without the fear of "I told you so" from others who feared to make any move at all.</p>
+      </div>
+      <button type="button" class="collapsible">2. Value Learning over Knowledge.</button>
+      <div class="content">
+        <p>Knowing things is intrinsically good, but other people learning things is better - either from external sources and bringing in new views, or from crewmates who've done it before. This sharing and expanding of knowledge means that we grow as a team in understanding and skill. Likewise it's better to bring on a crewmate who is eager to learn, with the ability to listen and absorb knowledge, than it is to bring on someone who knows everything, but is immutable.</p>
+      </div>
+      <button type="button" class="collapsible">3. We Plan for Obsolescence</button>
+      <div class="content">
+        <p>Not in the anti-consumer sense, but in the sense that one day the stuff we do, build or otherwise create will no longer be needed, and as such we need to make it as simple as possible to move on. We reject "lock-in" approaches to systems, design, and other concepts, and will include a plan for moving on as we go. This can come in the form of making sure what we build is able to be recycled, making sure that there are no single points of failure, knowledge silos, and a succession plan is always in place. At no point should our future be constrained by the choices of our past.</p>
+      </div>
+      <button type="button" class="collapsible">4. Embrace Diversity.</button>
+      <div class="content">
+        <p>To get the best ideas, you need the most ideas. To get the most ideas, you need the most viewpoints, and you can't get that without a broad range of backgrounds. I value diversity in all senses of the word, both in terms of the more visible gender identity, race, and sexuality, but also in terms of backgrounds, experience, thought processes and concepts. We will not always agree, but we will always be respectful of others and come to the best overall decision as a result.</p>
+      </div>
+      <button type="button" class="collapsible">5. Chase Happiness.</button>
+      <div class="content">
+        <p></p>
+      </div>
+      <img src="/img/pirate-flag.png" alt="Cartoon Pirate Image - Skull and Crossbones wearing an eyepatch, bandana and hat adorned with crossbones" class="center" />
+
     </div>
     <div w3-include-html="/footer.html"></div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="/js/generic.js"></script>
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+    </script>
   </body>
 </html>

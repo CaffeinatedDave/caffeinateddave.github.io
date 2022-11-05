@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>CaffeinatedDave</title>
-    <meta charset="utf-8">
     <link rel="apple-touch-icon" sizes="57x57" href="/ico/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/ico/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/ico/apple-icon-72x72.png">
@@ -22,44 +21,48 @@
     <meta name="msapplication-TileImage" content="/ico/ms-icon-144x144.png">
 
     <meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/css.css">
+    <link rel="stylesheet" href="/css/css.css">
   </head>
   <body>
-    <div w3-include-html="header.html"></div>
+    <div w3-include-html="/header.html"></div>
 
-    <div class="page container motivators">
-      <h2>Motivators</h2>
-      <p>In progress - I'll make it pretty at some point... </p>
-      <div id="game">
-        <h3 style="float:left;">Most Important</h3>
-        <h3 style="float:right;">Least Important</h3>
-        <div style="clear:both"></div>
-        <ul id="sortable"></ul>
-      </div>
+    <div class="page container">
+      <h1>121 Questions</h1>
 
-        <div id="explanation">
-          <p id="explain" style="display:none;"></p>
-          <p id="default">Mouse over a card to find out more about it.</p>
-        </div>
-
-      <div>
+      <div id="howToUse">
+        <h3> How To Use:</h3>
         <p>
-          Want to find out more about this tool? Visit <a href="https://management30.com/practice/moving-motivators/">Management 3.0 Moving Motivators</a>. © Management 3.0
+          Pick the type of questions you do/don't want to ask in your 121s, then click Generate.<br/>
+          The button will disappear after clicking - this isn't meant to be used until you find the question that suits best (although a list of questions is available if you prefer to do that) - instead it's to
         </p>
       </div>
+
+      <div id="generateSettings">
+        <p>
+          Questions: <br/>
+          <input type="checkbox" id="growthQs" checked="checked"/> Growth -
+          <input type="checkbox" id="communicationQs" checked="checked"/> Communications -
+          <input type="checkbox" id="motivationQs" checked="checked"/> Motivation -
+          <input type="checkbox" id="challengeQs" checked="checked"/> Challenge -
+          <input type="checkbox" id="feedbackQs" checked="checked"/> Feedback
+        </p>
+
+        <button onclick="pickQ();">Generate</button>
+      </div>
+
+      <h2 id="question"></h2>
+
+
     </div>
-
-
     <div w3-include-html="/footer.html"></div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" integrity="sha256-0H3Nuz3aug3afVbUlsu12Puxva3CP4EhJtPExqs54Vg=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <script src="/js/motivators.js"></script>
     <script src="/js/generic.js"></script>
+    <script src="/js/121qs.js"></script>
   </body>
 </html>

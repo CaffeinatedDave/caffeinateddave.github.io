@@ -30,14 +30,36 @@
   <body>
     <div w3-include-html="/header.html"></div>
 
-    <div class="page container">
-      <h1> Pomodoro Timers </h1>
+    <div class="page container motivators">
+      <h2>Motivators</h2>
+      <p>In progress - I'll make it pretty at some point... </p>
+      <div id="game">
+        <h3 style="float:left;">Most Important</h3>
+        <h3 style="float:right;">Least Important</h3>
+        <div style="clear:both"></div>
+        <ul id="sortable"></ul>
+      </div>
+
+        <div id="explanation">
+          <p id="explain" style="display:none;"></p>
+          <p id="default">Mouse over a card to find out more about it.</p>
+        </div>
+
+      <div>
+        <p>
+          Want to find out more about this tool? Visit <a href="https://management30.com/practice/moving-motivators/">Management 3.0 Moving Motivators</a>. © Management 3.0
+        </p>
+      </div>
     </div>
+
 
     <div w3-include-html="/footer.html"></div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js" integrity="sha256-0H3Nuz3aug3afVbUlsu12Puxva3CP4EhJtPExqs54Vg=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="/js/motivators.js"></script>
     <script src="/js/generic.js"></script>
   </body>
 </html>
